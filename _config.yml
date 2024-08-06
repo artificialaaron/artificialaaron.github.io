@@ -21,6 +21,8 @@ tagline: An automation and coding blog # it will display as the sub-title
 description: >- # used by seo meta and the atom feed
   Explore the world of Power Apps, Power Automate Desktop and other coding adventures.
 
+future: true
+
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://artificialaaron.github.io"

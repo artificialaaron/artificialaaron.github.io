@@ -24,3 +24,6 @@ package-lock.json
 # Misc
 _sass/dist
 assets/js/dist
+
+# Posts which aren't ready
+_posts/2024-08-06-tixel-scraper.md
