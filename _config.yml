@@ -107,14 +107,16 @@ toc: true
 
 comments:
   # Global switch for the post comment system. Keeping it empty means disabled.
-  provider: # [disqus | utterances | giscus]
+  active: utterances
   # The provider options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
     repo: artificialaaron/blog-comments
-    issue_term: # < url | pathname | title | ...>
+    issue_term: pathname
+    label: "utterances-comments" 
+    theme: "github-light" 
   # Giscus options › https://giscus.app
   giscus:
     repo: # <gh-username>/<repo>
