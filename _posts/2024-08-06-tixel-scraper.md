@@ -251,7 +251,7 @@ import requests
 import time
 
 token_file_path = 'keys/telegram_token.txt'
-chat_id_file_path = 'keys/aa_telegram_chat_id.txt'
+chat_id_file_path = 'keys/telegram_chat_id.txt'
 
 with open(token_file_path, 'r') as file:
     token = file.read().strip()
@@ -277,7 +277,7 @@ def run(playwright: Playwright) -> None:
             print("No General Admission Tickets for sale. Retrying in 20 seconds.")
             return
         output = "Ticket Price = ${}, {}".format(cost, url)
-        if cost <= 200:
+        if cost <= 75:
             print("Notification Sent")
             print(output)
             message = output
