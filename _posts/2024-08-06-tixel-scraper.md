@@ -21,7 +21,7 @@ Compounding the issue is Tixel's own processes:
 
 Hence the purpose of this blog-post, let's come up with a way to circumvent their system to be notified instantly when a ticket becomes available.
 
-![notification](assets\img\posts\tixelscraper\successful_notification.png){: width="243" }
+![notification](/assets\img\posts\tixelscraper\successful_notification.png){: width="243" }
 
 ## Requirements
 
@@ -183,7 +183,7 @@ python -m playwright install
 
 4. Start a new message and locate your bot via its name:
 
-    ![bot-message](assets\img\posts\tixelscraper\tixelNotificationBot.jpg){: width="180" height="300" }
+    ![bot-message](/assets\img\posts\tixelscraper\tixelNotificationBot.jpg){: width="180" height="300" }
 
 5. Send your bot the `/start` command.
 
@@ -241,7 +241,7 @@ chat_id_file_path = 'keys/telegram_chat_id.txt'
 
 And that's all the coding done, run the script now and you should now be getting notifications if your ticket type and price are available. Note for testing purposes you may want to alter the ticket type and/or cost to ensure you are receiving notifications prior to running this script for the correct parameters. 
 
-![notification](assets\img\posts\tixelscraper\successful_notification.png){: width="243" }
+![notification](/assets\img\posts\tixelscraper\successful_notification.png){: width="243" }
 
 Here is the finished code from this post:
 ```python
