@@ -175,9 +175,9 @@ python -m playwright install
 
 ## Notification Setup
 
-1. Before we add our code to send the notification we need to do some setup with our Telegram app. If you haven't already, download the [Telegram app](https://telegram.org/apps) and sign up for an account.
+1. Before we add our code to send the notification we need to do some setup with our Telegram app. If you haven't already, download the [Telegram app](https://telegram.org/apps){:target="_blank"} and sign up for an account.
 
-2. Contact the [BotFather](https://telegram.me/BotFather) bot and send the command `/start` followed by `/newbot`. Follow the instructions sent by BotFather to setup the bot, name it as you see fit (e.g. TixelNotificationBot).
+2. Contact the [BotFather](https://telegram.me/BotFather){:target="_blank"} bot and send the command `/start` followed by `/newbot`. Follow the instructions sent by BotFather to setup the bot, name it as you see fit (e.g. TixelNotificationBot).
 
 3. Once your bot is created you will receive an API key, copy this value and store it somewhere for later. 
 
@@ -187,7 +187,7 @@ python -m playwright install
 
 5. Send your bot the `/start` command.
 
-6. Lastly we need to find our own ID on Telegram, to do this you can message the [IDBot](https://telegram.me/myidbot) and send `/start` to receive your ID value. We will use this in the next section.
+6. Lastly we need to find our own ID on Telegram, to do this you can message the [IDBot](https://telegram.me/myidbot){:target="_blank"} and send `/start` to receive your ID value. We will use this in the next section.
 
 ## Adding the Notification Function to python
 
@@ -221,12 +221,12 @@ chat_id_file_path = 'keys/telegram_chat_id.txt'
       else:
          print("No ticket found for the minimum price, trying again in 20 seconds....")
    ```
-   > I like to set a cost threshold particularily if I am trying to get a cheap ticket to an event that is not selling well. If your event is very popular and the tickets are being purchased immediately after listing it may be worth setting the price threshold to a large number (e.g. 500) so that you are notified of every ticket on sale. 
+   > I like to set a cost threshold particularly if I am trying to get a cheap ticket to an event that is not selling well. If your event is very popular and the tickets are being purchased immediately after listing it may be worth setting the price threshold to a large number (e.g. 500) so that you are notified of every ticket on sale. 
    {: .prompt-info }
 
 7. We want this to run repeatedly until we stop the script so let's write a new function to replace our existing `sync_playwright` call. And make sure we call the function at script start.
 ```python
-   def run_every_20_seconds():
+   def run_every_20_seconds() -> None:
       while True:
          with sync_playwright() as playwright:
             run(playwright)
@@ -291,7 +291,7 @@ def run(playwright: Playwright) -> None:
         browser.close()
 
 
-def run_every_20_seconds():
+def run_every_20_seconds() -> None:
     while True:
         with sync_playwright() as playwright:
             run(playwright)
@@ -304,7 +304,7 @@ run_every_20_seconds()
 ## How could this be improved?
 Tixel actually has an auto purchase option for some events, if this is active for your event I recommend utilising it as well as this script.
 
-That said for events where auto purchase is disabled we could set up an auto purchase function by having us login to Tixel with a saved credit card and purchase the ticket once it's available. I am happy to do a manual purchase myself but if you really wanted that ticket you could have a go at implementing this.
+That said for events where auto purchase is disabled we could set up an auto purchase function by having us login to Tixel with a saved credit card and purchase the ticket once it's available. I am happy to do a manual purchase myself but if you really wanted that ticket you could have a go at implementing this. I also found a github repo by [johannes117](https://github.com/johannes117/tixel-scraper){:target="_blank"} which incorporates SMS and email notifications although I have not tried it myself.
 
 Another improvement would be to search all the available cards, currently we are only looking at the first button which matches the name:
 ```python
